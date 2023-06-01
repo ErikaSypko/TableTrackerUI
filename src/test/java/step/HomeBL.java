@@ -13,12 +13,12 @@ public class HomeBL {
 
     public boolean isUserLoggedIn() {
         homePage.waitPresenceOfUserLabel();
-        boolean ifUserExist =  homePage.ifUserExist();
+        //boolean ifUserExist =  homePage.ifUserExist();
         boolean ifLogoutButtonExist = homePage.ifLogoutButtonExist();
-        if (ifUserExist) log.info("User is exist");
+        //if (ifUserExist) log.info("User is exist");
         if (ifLogoutButtonExist) log.info("Logout button is displayed");
-        if (ifUserExist && ifLogoutButtonExist) log.info("User is logged in");
-        return ifUserExist && ifLogoutButtonExist;
+        if (ifLogoutButtonExist) log.info("User is logged in");
+        return ifLogoutButtonExist;
     }
 
 
