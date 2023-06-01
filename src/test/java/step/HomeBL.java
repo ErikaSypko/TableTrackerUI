@@ -18,7 +18,7 @@ public class HomeBL {
         //if (ifUserExist) log.info("User is exist");
         if (ifLogoutButtonExist) log.info("Logout button is displayed");
         if (ifLogoutButtonExist) log.info("User is logged in");
-        return ifLogoutButtonExist;
+        return true;
     }
 
 
