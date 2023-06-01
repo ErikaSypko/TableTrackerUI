@@ -12,6 +12,7 @@ public class HomeBL {
     }
 
     public boolean isUserLoggedIn() {
+        homePage.waitPresenceOfUserLabel();
         boolean ifUserExist =  homePage.ifUserExist();
         boolean ifLogoutButtonExist = homePage.ifLogoutButtonExist();
         if (ifUserExist) log.info("User is exist");

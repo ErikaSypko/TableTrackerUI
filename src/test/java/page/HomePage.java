@@ -24,6 +24,9 @@ public class HomePage extends BasePage{
     public boolean ifUserExist() {
         return userLabel.isDisplayed();
     }
+    public void waitPresenceOfUserLabel() {
+        userLabel.waitForElementPresent();
+    }
 
 
 

@@ -1,7 +1,11 @@
 package decorator;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import util.WebDriverSingleton;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Element implements WebElement, IElement {
@@ -94,5 +98,9 @@ public class Element implements WebElement, IElement {
     @Override
     public <X> X getScreenshotAs(OutputType<X> target) throws WebDriverException {
         return null;
+    }
+    public void waitForElementPresent() {
+        WebDriverWait wait = new WebDriverWait(WebDriverSingleton.getInstance(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 }

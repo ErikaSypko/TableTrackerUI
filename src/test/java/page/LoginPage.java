@@ -40,7 +40,7 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnLoginButton() {
-        loginButton.click();
+        loginButton.safeClick();
     }
 
     public String getAuthenticationErrorMessage() {

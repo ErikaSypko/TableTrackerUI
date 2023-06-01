@@ -28,6 +28,7 @@ public class StepDefinitionsLogin extends BaseTest {
     @Given("I login with valid email and password")
     public void iLoginWithValidEmailAndPassword() {
         loginBL.login(propertiesReader.getEmail(), propertiesReader.getPassword());
+
     }
 
     @Then("I should be successfully signed in")
