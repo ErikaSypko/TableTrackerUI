@@ -1,10 +1,13 @@
 package util;
 
+import com.epam.reportportal.listeners.LogLevel;
+import com.epam.reportportal.service.ReportPortal;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Properties;
 
 @Slf4j
@@ -18,8 +21,10 @@ public class PropertiesReader {
             file.close();
         } catch (FileNotFoundException e) {
             log.error(e.toString());
+            ReportPortal.emitLog("Test failed", LogLevel.ERROR.name(), new Date());
         } catch (IOException e) {
             log.error(e.toString());
+            ReportPortal.emitLog("Test failed", LogLevel.ERROR.name(), new Date());
         }
     }
 
